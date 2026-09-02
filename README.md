@@ -21,6 +21,8 @@ Software-Engineering-Lab/
 │   ├── UseCaseFlow/
 │   │   └── usecaseflow.pdf
 │
+├── Lab02/
+│   ├──AUTOMATED_RUBRIC_ASSIGNMENT_EVALUATOR_EPICANDBURNDOWNCHART.pdf
 └── README.md
 ```
 
@@ -29,3 +31,4 @@ Software-Engineering-Lab/
 | Lab | Topic | Problem Statement |
 |---|---|---|
 | Lab_01 | Requirements Engineering & UML Use-Case Modelling | #2 Automated Rubric Assignment Evaluator |
+| Lab_02 | EPICS and Burndown chart - JIRA 		             | #2 Automated Rubric Assignment Evaluator | 
