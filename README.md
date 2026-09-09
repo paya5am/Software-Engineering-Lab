@@ -24,7 +24,10 @@ Software-Engineering-Lab/
 ├── Lab02/
 │   ├──AUTOMATED_RUBRIC_ASSIGNMENT_EVALUATOR_EPICANDBURNDOWNCHART.pdf
 │ 
-│ 
+├── Lab03/
+│   ├──LAB03_COMPONENT_MODELLING_ARCHITECTURE_PATTERN_SELECTION.pdf
+│   ├──ARCHITECTURE_DIAGRAM.pdf
+│
 └── README.md
 ```
 
@@ -34,3 +37,4 @@ Software-Engineering-Lab/
 |---|---|---|
 | Lab_01 | Requirements Engineering & UML Use-Case Modelling | #2 Automated Rubric Assignment Evaluator |
 | Lab_02 | EPICS and Burndown chart - JIRA 		             | #2 Automated Rubric Assignment Evaluator | 
+| Lab_02 | Component Modelling and Architecture Pattern Selection      | #2 Automated Rubric Assignment Evaluator |
