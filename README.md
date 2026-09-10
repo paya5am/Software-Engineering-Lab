@@ -27,7 +27,7 @@ Software-Engineering-Lab/
 ├── Lab03/
 │   ├──COMPONENT_MODELLING_ARCHITECTURE_PATTERN_SELECTION.pdf
 │   │
-│   ├──ARCHITECTURE_DIAGRAM.pdf
+│   ├──ARCHITECTUREDIAGRAM.pdf
 │
 └── README.md
 ```
