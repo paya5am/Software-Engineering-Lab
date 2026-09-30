@@ -49,7 +49,7 @@ Software-Engineering-Lab/
 │   │   ├── videos/
 │   │   │   ├── before_changes/
 │   │   │   │   └── beforeanychanges.mp4
-│   │   │   
+│   │   │   │
 │   │   │   ├── per_task_videos/
 │   │   │   │   ├── task1.mp4
 │   │   │   │   ├── task2.mp4
