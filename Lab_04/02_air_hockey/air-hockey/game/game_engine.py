@@ -7,7 +7,9 @@ there is no scoring, no match timer, and the reset that happens after
 a goal is incomplete. That's what Tasks 2-4 fix/add.
 """
 
+import math  # ADDED (Task 3): for rounding the countdown up
 import random
+import time  # ADDED (Task 3): real-time clock for the match timer
 
 from game.puck import Puck
 from game.paddle import Paddle
@@ -19,6 +21,7 @@ PLAYER_SPEED = 6
 PUCK_RADIUS = 12
 PADDLE_RADIUS = 28
 INITIAL_PUCK_SPEED = 4.5
+MATCH_DURATION = 30  # ADDED (Task 3): match length in seconds
 
 
 class GameEngine:
@@ -41,8 +44,12 @@ class GameEngine:
         # ADDED (Task 2): match scores
         self.player_score = 0
         self.computer_score = 0
-        # ADDED (Task 2): set to True by the match timer in Task 3
+        # ADDED (Task 2): True once the match timer runs out (set in Task 3)
         self.match_over = False
+
+        # ADDED (Task 3): match timer state
+        self._start_time = time.monotonic()
+        self.time_left = float(MATCH_DURATION)
 
     def _launch_puck(self):
         angle_choices = [0.3, 0.6, -0.3, -0.6]
@@ -52,6 +59,9 @@ class GameEngine:
         self.puck.vy = INITIAL_PUCK_SPEED * vy_factor
 
     def handle_input(self, keys_pressed):
+        # ADDED (Task 3): ignore input once the match has ended
+        if self.match_over:
+            return
         import pygame
         dx = dy = 0
         if keys_pressed[pygame.K_UP]:
@@ -65,6 +75,17 @@ class GameEngine:
         self.player.move_by(dx, dy)
 
     def update(self):
+        # ADDED (Task 3): stop all game logic once the match is over
+        if self.match_over:
+            return
+
+        # ADDED (Task 3): update the countdown from real elapsed time
+        elapsed = time.monotonic() - self._start_time
+        self.time_left = max(0.0, MATCH_DURATION - elapsed)
+        if self.time_left <= 0:
+            self.match_over = True
+            return
+
         self.ai.update(self.computer, self.puck)
 
         # ADDED (Task 1): record this frame's paddle velocities before colliding
@@ -138,6 +159,12 @@ class GameEngine:
                            (WIDTH / 2 + 20, text_y),
                            renderer.COLOR_COMPUTER)
 
-        # ADDED (Task 2): winner banner, shown once the match is over (Task 3 sets this)
+        # ADDED (Task 3): remaining time, bottom centre
+        timer_text = f"Time {math.ceil(self.time_left)}"
+        renderer.draw_text(surface, font, timer_text,
+                           (WIDTH / 2 - font.size(timer_text)[0] / 2,
+                            HEIGHT - MARGIN - font.get_height() - 6))
+
+        # ADDED (Task 2/3): winner banner, shown once the timer has run out
         if self.match_over:
             renderer.draw_banner(surface, font, self.winner_text())
