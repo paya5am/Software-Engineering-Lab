@@ -22,23 +22,23 @@ Software-Engineering-Lab/
 │   │   └── usecaseflow.pdf
 │
 ├── Lab02/
-│   ├──AUTOMATED_RUBRIC_ASSIGNMENT_EVALUATOR_EPICANDBURNDOWNCHART.pdf
+│   └── AUTOMATED_RUBRIC_ASSIGNMENT_EVALUATOR_EPICANDBURNDOWNCHART.pdf
 │ 
 ├── Lab03/
-│   ├──COMPONENT_MODELLING_ARCHITECTURE_PATTERN_SELECTION.pdf
+│   ├── COMPONENT_MODELLING_ARCHITECTURE_PATTERN_SELECTION.pdf
 │   │
-│   ├──ARCHITECTUREDIAGRAM.pdf
+│   └── ARCHITECTUREDIAGRAM.pdf
 │
 ├── Lab04/
-│   ├──air-hockey/
+│   ├── air-hockey/
 │   │   ├── game/
-│   │   │   ├──__init__.py
-│   │   │   ├──ai.py
-│   │   │   ├──collisions.py
-│   │   │   ├──game_engine.py
-│   │   │   ├──paddle.py
-│   │   │   ├──puck.py
-│   │   │   └──renderer.py
+│   │   │   ├── __init__.py
+│   │   │   ├── ai.py
+│   │   │   ├── collisions.py
+│   │   │   ├── game_engine.py
+│   │   │   ├── paddle.py
+│   │   │   ├── puck.py
+│   │   │   └── renderer.py
 │   │   │
 │   │   ├── main.py
 │   │   ├── README.MD
@@ -46,23 +46,23 @@ Software-Engineering-Lab/
 │   │   └── venv/
 │   │
 │   ├── submissions/
-│   │   ├──videos/
-│   │   │   ├──before_changes/
-│   │   │   │   └──beforeanychanges.mp4
+│   │   ├── videos/
+│   │   │   ├── before_changes/
+│   │   │   │   └── beforeanychanges.mp4
 │   │   │   
-│   │   │   ├──per_task_videos/
-│   │   │   │   ├──task1.mp4
-│   │   │   │   ├──task2.mp4
-│   │   │   │   ├──task3.mp4
-│   │   │   │   └──task4.mp4
+│   │   │   ├── per_task_videos/
+│   │   │   │   ├── task1.mp4
+│   │   │   │   ├── task2.mp4
+│   │   │   │   ├── task3.mp4
+│   │   │   │   └── task4.mp4
 │   │   │   │
-│   │   │   ├──final_game/
-│   │   │   │   └──afterallchanges.mp4
+│   │   │   ├── final_game/
+│   │   │   │   └── afterallchanges.mp4
 │   │   │
-│   │   ├──chat-transcript/
-│   │   │   └──complete_transcript.pdf 
-
-
+│   │   ├── chat-transcript/
+│   │   │   └── complete_transcript.pdf 
+│
+│
 └── README.md
 ```
 
