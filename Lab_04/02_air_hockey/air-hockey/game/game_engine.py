@@ -61,11 +61,18 @@ class GameEngine:
     def update(self):
         self.ai.update(self.computer, self.puck)
 
+        # ADDED (Task 1): record this frame's paddle velocities before colliding
+        self.player.update_velocity()
+        self.computer.update_velocity()
+
         self.puck.move()
         self.puck.bounce_off_walls(HEIGHT, MARGIN)
 
-        handle_paddle_collision(self.puck, self.player)
-        handle_paddle_collision(self.puck, self.computer)
+        # CHANGED (Task 1): pass the puck-centre y limits to the collision handler
+        min_y = MARGIN + PUCK_RADIUS
+        max_y = HEIGHT - MARGIN - PUCK_RADIUS
+        handle_paddle_collision(self.puck, self.player, min_y, max_y)
+        handle_paddle_collision(self.puck, self.computer, min_y, max_y)
 
         self._handle_goals()
 
