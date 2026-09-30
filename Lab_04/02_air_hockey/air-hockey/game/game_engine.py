@@ -130,8 +130,10 @@ class GameEngine:
 
     def _reset_puck(self):
         self.puck.x, self.puck.y = WIDTH / 2, HEIGHT / 2
-        self.puck.vx = 0
-        self.puck.vy = 0
+        # CHANGED (Task 4): the old code set vx = vy = 0 here, which left the
+        # puck frozen. Relaunch it instead: _launch_puck overwrites both
+        # velocity components, so nothing from the goal shot carries over.
+        self._launch_puck()
 
     # ADDED (Task 2): result of the match based on the current scores
     def winner_text(self):
