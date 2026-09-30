@@ -4,6 +4,7 @@ Air Hockey (Lab Starter)
 Run with:  python3 main.py
 
 Controls: Arrow keys move your paddle (left side, blue).
+          R restarts the match at any time.
 """
 
 import pygame
@@ -25,6 +26,9 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            # ADDED: press R at any time to restart (fresh scores, timer, puck, paddles)
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_r:
+                engine = GameEngine()
 
         keys = pygame.key.get_pressed()
         engine.handle_input(keys)
