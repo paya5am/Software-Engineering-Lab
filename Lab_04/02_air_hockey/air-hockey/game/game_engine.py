@@ -38,6 +38,12 @@ class GameEngine:
         )
         self.ai = ComputerAI()
 
+        # ADDED (Task 2): match scores
+        self.player_score = 0
+        self.computer_score = 0
+        # ADDED (Task 2): set to True by the match timer in Task 3
+        self.match_over = False
+
     def _launch_puck(self):
         angle_choices = [0.3, 0.6, -0.3, -0.6]
         direction = random.choice([-1, 1])
@@ -77,17 +83,28 @@ class GameEngine:
         self._handle_goals()
 
     def _handle_goals(self):
-        if self.puck.x - self.puck.radius < MARGIN:
-            if GOAL_TOP < self.puck.y < GOAL_BOTTOM:
-                self._reset_puck()
+        # CHANGED (Task 2): a goal counts only when the puck is fully inside
+        # the goal gap and has fully crossed the goal line.
+        r = self.puck.radius
+        in_gap = GOAL_TOP + r <= self.puck.y <= GOAL_BOTTOM - r
+
+        if self.puck.x - r < MARGIN:
+            if in_gap:
+                if self.puck.x + r < MARGIN:
+                    # ADDED (Task 2): puck in the left goal -> computer scores
+                    self.computer_score += 1
+                    self._reset_puck()
             else:
-                self.puck.x = MARGIN + self.puck.radius
+                self.puck.x = MARGIN + r
                 self.puck.vx = -self.puck.vx
-        elif self.puck.x + self.puck.radius > WIDTH - MARGIN:
-            if GOAL_TOP < self.puck.y < GOAL_BOTTOM:
-                self._reset_puck()
+        elif self.puck.x + r > WIDTH - MARGIN:
+            if in_gap:
+                if self.puck.x - r > WIDTH - MARGIN:
+                    # ADDED (Task 2): puck in the right goal -> player scores
+                    self.player_score += 1
+                    self._reset_puck()
             else:
-                self.puck.x = WIDTH - MARGIN - self.puck.radius
+                self.puck.x = WIDTH - MARGIN - r
                 self.puck.vx = -self.puck.vx
 
     def _reset_puck(self):
@@ -95,9 +112,32 @@ class GameEngine:
         self.puck.vx = 0
         self.puck.vy = 0
 
+    # ADDED (Task 2): result of the match based on the current scores
+    def winner_text(self):
+        if self.player_score > self.computer_score:
+            return "You win!"
+        if self.computer_score > self.player_score:
+            return "Computer wins!"
+        return "Draw"
+
     def draw(self, surface, font):
         from game import renderer
         renderer.draw_table(surface)
         renderer.draw_paddle(surface, self.player, renderer.COLOR_PLAYER)
         renderer.draw_paddle(surface, self.computer, renderer.COLOR_COMPUTER)
         renderer.draw_puck(surface, self.puck)
+
+        # ADDED (Task 2): score display, one on each side of the centre line
+        you_text = f"You {self.player_score}"
+        cpu_text = f"Computer {self.computer_score}"
+        text_y = MARGIN + 6
+        renderer.draw_text(surface, font, you_text,
+                           (WIDTH / 2 - 20 - font.size(you_text)[0], text_y),
+                           renderer.COLOR_PLAYER)
+        renderer.draw_text(surface, font, cpu_text,
+                           (WIDTH / 2 + 20, text_y),
+                           renderer.COLOR_COMPUTER)
+
+        # ADDED (Task 2): winner banner, shown once the match is over (Task 3 sets this)
+        if self.match_over:
+            renderer.draw_banner(surface, font, self.winner_text())
