@@ -10,7 +10,7 @@
 
 ```
 Software-Engineering-Lab/
-├── Lab01/
+├── Lab_01/
 │   ├── Requirements/
 │   │   ├── requirements_table.pdf
 │   │   └── rqtable.ods
@@ -21,15 +21,15 @@ Software-Engineering-Lab/
 │   ├── UseCaseFlow/
 │   │   └── usecaseflow.pdf
 │
-├── Lab02/
+├── Lab_02/
 │   └── AUTOMATED_RUBRIC_ASSIGNMENT_EVALUATOR_EPICANDBURNDOWNCHART.pdf
 │ 
-├── Lab03/
+├── Lab_03/
 │   ├── COMPONENT_MODELLING_ARCHITECTURE_PATTERN_SELECTION.pdf
 │   │
 │   └── ARCHITECTUREDIAGRAM.pdf
 │
-├── Lab04/
+├── Lab_04/
 │   ├── air-hockey/
 │   │   ├── game/
 │   │   │   ├── __init__.py
@@ -62,6 +62,21 @@ Software-Engineering-Lab/
 │   │   ├── chat-transcript/
 │   │   │   └── complete_transcript.pdf 
 │
+├── Lab_05/
+│   ├── reports/
+│   │   ├── after/
+│   │   │   ├── bandit_report.txt
+│   │   │   ├── flake8_report.txt
+│   │   │   └── pylint_report.txt
+│   │   │ 
+│   │   ├── before/
+│   │   │   ├── bandit_report.txt
+│   │   │   ├── flake8_report.txt
+│   │   │   └── pylint_report.txt
+│   │
+│   ├── README.MD
+│   ├── gym_system.py
+│   └── issues.md
 │
 └── README.md
 ```
@@ -74,3 +89,4 @@ Software-Engineering-Lab/
 | Lab_02 | EPICS and Burndown chart - JIRA 		             | #2 Automated Rubric Assignment Evaluator | 
 | Lab_03 | Component Modelling and Architecture Pattern Selection      | #2 Automated Rubric Assignment Evaluator |
 | Lab_04 | Vibe Coding Assignment | #2 Air Hockey |
+| Lab_05 | Static Code Analysis | #4 Fitness Club Class Booking Ledger |
