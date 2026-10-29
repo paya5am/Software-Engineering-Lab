@@ -78,6 +78,12 @@ Software-Engineering-Lab/
 │   ├── gym_system.py
 │   └── issues.md
 │
+├──Lab_06/
+│    ├── CodeCoverageTest_shipping_quote.py
+│    ├── CodeCoverage_test_shipping_quote.png
+│    ├── BranchCoverageTest_shipping_quote.py
+│    └── BranchCoverage_test_shipping_quote.png
+│
 └── README.md
 ```
 
@@ -90,3 +96,4 @@ Software-Engineering-Lab/
 | Lab_03 | Component Modelling and Architecture Pattern Selection      | #2 Automated Rubric Assignment Evaluator |
 | Lab_04 | Vibe Coding Assignment | #2 Air Hockey |
 | Lab_05 | Static Code Analysis | #4 Fitness Club Class Booking Ledger |
+| Lab_06 | Branch and Code Coverage | #4 Shipping Quotation |
