@@ -79,10 +79,15 @@ Software-Engineering-Lab/
 │   └── issues.md
 │
 ├──Lab_06/
-│    ├── CodeCoverageTest_shipping_quote.py
-│    ├── CodeCoverage_test_shipping_quote.png
-│    ├── BranchCoverageTest_shipping_quote.py
-│    └── BranchCoverage_test_shipping_quote.png
+│   ├── CodeCoverageTest_shipping_quote.py
+│   ├── CodeCoverage_test_shipping_quote.png
+│   ├── BranchCoverageTest_shipping_quote.py
+│   └── BranchCoverage_test_shipping_quote.png
+│
+├─ Lab_07/
+│  ├── PES1UG24CS002_Lab_07.pdf
+│  ├── processor.py
+│  └── test_processor.py
 │
 └── README.md
 ```
@@ -97,3 +102,4 @@ Software-Engineering-Lab/
 | Lab_04 | Vibe Coding Assignment | #2 Air Hockey |
 | Lab_05 | Static Code Analysis | #4 Fitness Club Class Booking Ledger |
 | Lab_06 | Branch and Code Coverage | #4 Shipping Quotation |
+| Lab_07 | Fuzzing | #4 Shipping Quotation |
